@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Payment Service",
+    "_postman_id": "9cd9bd1e-857b-46a6-b1b8-2b87be0f7771",
+    "description": "Коллекция для проверки Payment Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 1000,\n  \"currency\": \"KZT\",\n  \"description\": \"Оплата заказа №123\",\n  \"clientId\": 12345\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "payments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Payment By Id",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/payments/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "payments",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Confirm Payment",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/payments/1/confirm",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "payments",
+            "1",
+            "confirm"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cancel Payment",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/payments/1/cancel",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "payments",
+            "1",
+            "cancel"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Client Payments",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/clients/12345/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "clients",
+            "12345",
+            "payments"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
