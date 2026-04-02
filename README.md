@@ -36,7 +36,7 @@ src/main/resources
 - URL: `jdbc:postgresql://localhost:5432/payment_service`
 - DB schema: `public`
 - Username: `postgres`
-- Password: `postgres`
+- Password: ``
 
 Flyway автоматически создаёт таблицу `payments` в схеме `public`.
 
